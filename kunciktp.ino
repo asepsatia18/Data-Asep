@@ -58,9 +58,13 @@ void setup(void) {
   uint8_t card17[] =  { 0x4, 0x20, 0x51, 0x4A, 0x2E, 0x2A, 0x80 }; //card 17 Yogi
   uint8_t card18[] =  { 0x4, 0x75, 0x2B, 0xE2, 0x83, 0x44, 0x80 }; //card 18 Diva 
   uint8_t card19[] =  { 0x4, 0x66, 0x8D, 0x7A, 0x10, 0x2C, 0x80 }; //card 19 Fahmi
-  uint8_t card20[] =  { 0, 0, 0, 0, 0, 0, 0 }; //card 20 
-  uint8_t card21[] =  { 0, 0, 0, 0, 0, 0, 0 }; //card 21 
-  
+  uint8_t card20[] =  { 0x4, 0x3C, 0x8, 0x2A, 0xBE, 0x53, 0x80 }; //card 20 Fadillah
+  uint8_t card21[] =  { 0x4, 0x84, 0x52, 0x4A, 0xFE, 0x4D, 0x80}; //card 21 Najib 
+  uint8_t card22[] =  { 0x4, 0x1B, 0x6E, 0x42, 0x2F, 0x25, 0x80 }; //card 22 Ratu
+  uint8_t card23[] =  { 0, 0, 0, 0, 0, 0, 0 }; //card 23
+  uint8_t card24[] =  { 0, 0, 0, 0, 0, 0, 0 }; //card 24
+  uint8_t card25[] =  { 0, 0, 0, 0, 0, 0, 0 }; //card 25
+
 void loop() {
   // put your main code here, to run repeatedly:
   boolean success;
@@ -108,7 +112,11 @@ void loop() {
     int card19matches=0;
     int card20matches=0;
     int card21matches=0;
-  
+    int card22matches=0;
+    int card23matches=0;
+    int card24matches=0;
+    int card25matches=0;
+
     for(i=0;i<7;i++)
     {
       if(uid[i] == card1[i])
@@ -195,6 +203,22 @@ void loop() {
       {
         card21matches++;      
       }
+      if(uid[i] == card22[i])
+      {
+        card22matches++;      
+      }
+      if(uid[i] == card23[i])
+      {
+        card23matches++;      
+      }
+      if(uid[i] == card24[i])
+      {
+        card24matches++;      
+      }
+      if(uid[i] == card25[i])
+      {
+        card25matches++;      
+      }
     }
 
     if(card1matches == 7)
@@ -278,6 +302,22 @@ void loop() {
       Unlock();
     }
     if(card21matches == 7)
+    {
+      Unlock();
+    }
+    if(card22matches == 7)
+    {
+      Unlock();
+    }
+    if(card23matches == 7)
+    {
+      Unlock();
+    }
+    if(card24matches == 7)
+    {
+      Unlock();
+    }
+    if(card25matches == 7)
     {
       Unlock();
     }
